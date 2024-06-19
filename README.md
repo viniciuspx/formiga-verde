@@ -69,4 +69,8 @@ b. day: agregação dos dados de forma diária (default).
 c. raw: nenhuma agregação.
 ```
 
-Caso resolution estaja vasio na query do path, utilizamos day como default.
+Caso resolution esteja vazio na query do path, utilizamos day como default.
+
+## Base de Dados
+
+A base de dados padrao é o arquivo [test.csv](https://github.com/viniciuspx/formiga-verde/blob/main/test.csv)

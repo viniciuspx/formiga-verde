@@ -9,6 +9,7 @@ export const findMeasurements = (
   startDate: string,
   endDate: string
 ) => {
+  // Transformamos a string de data no tipo Data para facilitar comparcoes
   const startDateParsed = new Date(normalizeString(startDate));
   const endDateParsed = new Date(normalizeString(endDate));
 

@@ -71,6 +71,8 @@ c. raw: nenhuma agregação.
 
 Caso resolution esteja vazio na query do path, utilizamos day como default.
 
+Sobre as agregações tomei a liberdade de fazer as agregações por dia, hora e raw. Quando selecionado por dia, não levamos em consideração as horas então agregamos por todo o dia. Logo, por hora levamos em considerações as horas e por fim raw retorna os dados brutos.
+
 ## Base de Dados
 
 A base de dados padrao é o arquivo [test.csv](https://github.com/viniciuspx/formiga-verde/blob/main/test.csv)

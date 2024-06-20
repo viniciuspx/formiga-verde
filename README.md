@@ -67,7 +67,9 @@ FILE_PATH="./test.csv"
 PORT é a porta dque o sistema roda
 FILE_PATH é o arquivo o qual acessaremos os dados
 
-O arquivo test.csv é um arquivo menor de testes para facilidar o desenvolvimento
+O arquivo test.csv é um arquivo menor de testes para facilidar o desenvolvimento.
+
+Basta colocar o arquivo csv para demais testes no diretorio raiz da API
 
 ## Exemplo de Requisição
 

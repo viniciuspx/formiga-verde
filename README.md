@@ -54,6 +54,21 @@ Para rodar os testes
 npm run test
 ```
 
+## Enviroment
+
+A variavel de ambiente é simples temos somente três para facilitar configuração.
+
+```
+PORT='3000'
+FILE_PATH="./test.csv"
+#FILE_PATH="./dados-medicao-demo.csv"
+```
+
+PORT é a porta dque o sistema roda
+FILE_PATH é o arquivo o qual acessaremos os dados
+
+O arquivo test.csv é um arquivo menor de testes para facilidar o desenvolvimento
+
 ## Exemplo de Requisição
 
 ![image](https://github.com/viniciuspx/formiga-verde/assets/22032075/9b262ee1-bc1a-4f88-94f6-b2699dbb7aea)

@@ -1,4 +1,5 @@
 import { DATA } from "../database/csvData";
+import { compareDates } from "./timeHelper";
 import { normalizeString } from "./normalizeString";
 
 // Funcao principal aonde consultamos os dados de medicao
@@ -20,9 +21,11 @@ export const findMeasurements = (
     DATA.forEach((item) => {
       if (deviceId === item.deviceId) {
         const timestampDate = new Date(item.timestamp);
+        // Nessa caso necessita ser o mesmo dia para comprar horas
         if (
-          timestampDate >= startDateParsed &&
-          timestampDate <= endDateParsed
+          compareDates(startDateParsed, endDateParsed) === -1 &&
+          timestampDate.getTime() <= endDateParsed.getTime() &&
+          timestampDate.getTime() >= startDateParsed.getTime()
         ) {
           accumulatedEnergy = accumulatedEnergy + item.activeEnergy;
         }
@@ -33,8 +36,8 @@ export const findMeasurements = (
       if (deviceId === item.deviceId) {
         const timestampDate = new Date(item.timestamp);
         if (
-          timestampDate >= startDateParsed &&
-          timestampDate <= endDateParsed
+          timestampDate.getTime() <= endDateParsed.getTime() &&
+          timestampDate.getTime() >= startDateParsed.getTime()
         ) {
           rawData.push({
             date: item.timestamp,
@@ -48,8 +51,8 @@ export const findMeasurements = (
       if (deviceId === item.deviceId) {
         const timestampDate = new Date(item.timestamp);
         if (
-          timestampDate.getDate() <= endDateParsed.getDate() &&
-          timestampDate.getDate() >= startDateParsed.getDate()
+          timestampDate.getTime() <= endDateParsed.getTime() &&
+          timestampDate.getTime() >= startDateParsed.getTime()
         ) {
           accumulatedEnergy = accumulatedEnergy + item.activeEnergy;
         }
